@@ -1,20 +1,20 @@
 /**
- * Created by Moiz.Kachwala on 15-06-2016.
+ * Created by Mason Belyeu on 12.1.2016.
  */
 
 import express = require("express");
-import HeroBusiness = require("./../app/business/HeroBusiness");
+import ContactBusiness = require("./../app/business/ContactBusiness");
 import IBaseController = require("./BaseController");
-import IHeroModel = require("./../app/model/interfaces/HeroModel");
+import IContactModel = require("./../app/model/interfaces/ContactModel");
 
-class HeroController implements IBaseController <HeroBusiness> {
+class ContactController implements IBaseController <ContactBusiness> {
 
     create(req: express.Request, res: express.Response): void {
         try {
 
-            var hero: IHeroModel = <IHeroModel>req.body;
-            var heroBusiness = new HeroBusiness();
-            heroBusiness.create(hero, (error, result) => {
+            var contact: IContactModel = <IContactModel>req.body;
+            var contactBusiness = new ContactBusiness();
+            contactBusiness.create(contact, (error, result) => {
                 if(error) res.send({"error": "error"});
                 else res.send({"success": "success"});
             });
@@ -27,10 +27,10 @@ class HeroController implements IBaseController <HeroBusiness> {
     }
     update(req: express.Request, res: express.Response): void {
         try {
-            var hero: IHeroModel = <IHeroModel>req.body;
+            var contact: IContactModel = <IContactModel>req.body;
             var _id: string = req.params._id;
-            var heroBusiness = new HeroBusiness();
-            heroBusiness.update(_id, hero, (error, result) => {
+            var contactBusiness = new ContactBusiness();
+            contactBusiness.update(_id, contact, (error, result) => {
                 if(error) res.send({"error": "error"});
                 else res.send({"success": "success"});
             });
@@ -45,8 +45,8 @@ class HeroController implements IBaseController <HeroBusiness> {
         try {
 
             var _id: string = req.params._id;
-            var heroBusiness = new HeroBusiness();
-            heroBusiness.delete(_id, (error, result) => {
+            var contactBusiness = new ContactBusiness();
+            contactBusiness.delete(_id, (error, result) => {
                 if(error) res.send({"error": "error"});
                 else res.send({"success": "success"});
             });
@@ -60,8 +60,8 @@ class HeroController implements IBaseController <HeroBusiness> {
     retrieve(req: express.Request, res: express.Response): void {
         try {
 
-            var heroBusiness = new HeroBusiness();
-            heroBusiness.retrieve((error, result) => {
+            var contactBusiness = new ContactBusiness();
+            contactBusiness.retrieve((error, result) => {
                 if(error) res.send({"error": "error"});
                 else res.send(result);
             });
@@ -76,8 +76,8 @@ class HeroController implements IBaseController <HeroBusiness> {
         try {
 
             var _id: string = req.params._id;
-            var heroBusiness = new HeroBusiness();
-            heroBusiness.findById(_id, (error, result) => {
+            var contactBusiness = new ContactBusiness();
+            contactBusiness.findById(_id, (error, result) => {
                 if(error) res.send({"error": "error"});
                 else res.send(result);
             });
@@ -89,4 +89,4 @@ class HeroController implements IBaseController <HeroBusiness> {
         }
     }
 }
-export = HeroController;
+export = ContactController;

@@ -1,8 +1,10 @@
+import { EstimateDetailComponent } from './components/estimateDetail/estimate-detail.component';
+import { EstimateComponent } from './components/estimates/estimate.component';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ContactsComponent } from './components/Contacts/Contacts.component';
+import { ContactDetailComponent } from './components/contactDetail/contact-detail.component';
 
-import { DashboardComponent }   from './components/dashboard/dashboard.component';
-import { HeroesComponent }      from './components/heroes/heroes.component';
-import { HeroDetailComponent }  from './components/heroDetail/hero-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -16,11 +18,19 @@ const appRoutes: Routes = [
   },
   {
     path: 'detail/:id',
-    component: HeroDetailComponent
+    component: ContactDetailComponent
   },
   {
-    path: 'heroes',
-    component: HeroesComponent
+    path: 'Contacts',
+    component: ContactsComponent
+  },  
+  {
+    path: 'Estimates',
+    component: EstimateComponent
+},
+  {
+    path:'estDetail/:id',
+    component: EstimateDetailComponent
   }
 ];
 

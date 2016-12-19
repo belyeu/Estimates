@@ -1,3 +1,6 @@
+import { EstimateDetailComponent } from './components/estimateDetail/estimate-detail.component';
+import { EstimateService } from './services/estimate.service';
+import { EstimateComponent } from './components/estimates/estimate.component';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
@@ -6,11 +9,12 @@ import { HttpModule }     from '@angular/http';
 import { AppComponent }  from './app.component';
 import { routing }       from './app.routing';
 
-import { HeroesComponent }      from './components/heroes/heroes.component';
+import { ContactsComponent }      from './components/Contacts/Contacts.component';
 import { DashboardComponent }   from './components/dashboard/dashboard.component';
-import { HeroDetailComponent }  from './components/heroDetail/hero-detail.component';
-
-import { HeroService }  from './services/hero.service';
+import { ContactDetailComponent }  from './components/contactDetail/contact-detail.component';
+import {SearchComponent} from './components/search/search.component';
+import { ContactService }  from './services/contact.service';
+import { SearchService }  from './services/search.service';
 
 @NgModule({
   imports: [
@@ -21,12 +25,17 @@ import { HeroService }  from './services/hero.service';
     ],
   declarations: [
     AppComponent,
-    HeroesComponent,
+    ContactsComponent,
     DashboardComponent,
-    HeroDetailComponent
+    ContactDetailComponent,
+    EstimateComponent,
+    EstimateDetailComponent,
+    SearchComponent
   ],
   providers: [
-    HeroService
+    ContactService,
+    EstimateService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

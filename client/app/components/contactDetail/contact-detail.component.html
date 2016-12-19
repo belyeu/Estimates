@@ -1,0 +1,87 @@
+<div *ngIf="contact" class="form-horizontal">
+    <h2>{{contact.name}} - Contact Details</h2>
+
+    <h3>{{contact.name}} - Basic Info</h3>
+    <div class="form-group">
+        <div *ngIf="!newContact">
+            <label class="col-sm-2 control-label">id: </label>
+            <div class="col-sm-10">
+                {{contact._id}}
+            </div>
+        </div>
+    </div>
+    <!--notes -->
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Name: </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="contact.name" placeholder="Client Name" />
+        </div>
+        <label class="col-sm-2 control-label">Email: </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="contact.email" placeholder="Email" />
+        </div>
+        
+            <label class="col-sm-2 control-label">Mobile: </label>
+            <div class="col-sm-10">
+            <input class = "form-control"[(ngModel)] = "contact.phone" placeholder= "Mobile #" />        
+    </div>
+    
+            <label class="col-sm-2 control-label">Home Phone: </label>
+            <div class="col-sm-10">
+            <input class = "form-control"[(ngModel)] = "contact.phone2" placeholder= "Home #" />        
+    
+    </div>
+    <!--address -->
+    <h3>Address</h3>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Adress #1: </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="contact.address1" placeholder="address" />
+        </div>
+        
+     
+            <label class="col-sm-2 control-label">Address #2: </label>
+            <div class="col-sm-10">
+            <input class = "form-control"[(ngModel)] = "contact.address2" placeholder= "phone number" />  
+                  
+                  
+    </div>
+      <label class="col-sm-2 control-label">City: </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="contact.city" placeholder="city" />
+        </div>
+       
+   
+            <label class="col-sm-2 control-label">State: </label>
+            <div class="col-sm-10">
+            <input class = "form-control"[(ngModel)] = "contact.state" placeholder= "state" />  
+                  
+        </div>
+       
+            <label class="col-sm-2 control-label">Zip/Postal Code: </label>
+            <div class="col-sm-10">
+            <input class = "form-control"[(ngModel)] = "contact.postal" placeholder= "postal code" />  
+                  
+        </div>
+    
+        <label class="col-sm-2 control-label">Cost Estimate </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="contact.amountEstimate" placeholder="amountEstimate" />
+        </div>
+    
+<!--notes -->
+ <h3>Notes!</h3>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Notes </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="contact.note" placeholder="notes" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button (click)="goBack()" class="btn btn-default">Back</button>
+            <button (click)="save()" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</div>

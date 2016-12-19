@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "build/app",
-    "target": "es5",
-    "module": "system",
+    "target": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
@@ -11,8 +11,8 @@
     "noImplicitAny": false
   },
   "exclude": [
-    "node_modules",
-    "typings",
-    "typings/index.d.ts"
+"node_modules"
+    
+   
   ]
 }

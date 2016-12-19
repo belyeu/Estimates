@@ -1,9 +1,9 @@
 /**
- * Created by Moiz.Kachwala on 15-06-2016.
+ * Created by Mason Belyeu on 12.1.2016.
  */
 
 class Constants {
-    static DB_CONNECTION_STRING: string = process.env.NODE_ENV === 'production' ? process.env.dbURI : "mongodb://localhost:27017/quickStart"
+    static DB_CONNECTION_STRING: string = process.env.NODE_ENV === 'production' ? process.env.dbURI : "mongodb://mbelyeu:summer16@ds149567.mlab.com:49567/cornerstone"
 }
 Object.seal(Constants);
 export = Constants;

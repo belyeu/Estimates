@@ -1,12 +1,12 @@
 /**
- * Created by Moiz.Kachwala on 02-06-2016.
+ * Created by Mason Belyeu 12.1.2016
  */
 
 import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
-import {Hero} from "../../models/hero";
-import {HeroService} from "../../services/hero.service";
+import {Estimate} from "../../models/estimate";
+import {EstimateService} from "../../services/estimate.service";
 
 @Component({
     selector: 'my-dashboard',
@@ -15,20 +15,20 @@ import {HeroService} from "../../services/hero.service";
 })
 
 export class DashboardComponent implements OnInit {
-    heroes: Hero[] = [];
+    Estimates: Estimate[] = [];
 
     constructor(
         private router: Router,
-        private heroService: HeroService) {
+        private estimateService: EstimateService) {
     }
 
     ngOnInit() {
-        this.heroService.getHeroes()
-            .then(heroes => this.heroes = heroes);
+        this.estimateService.getEstimates()
+            .then(Estimates => this.Estimates = Estimates);
     }
 
-    gotoDetail(hero: Hero) {
-        let link = ['/detail', hero._id];
+    gotoDetail(estimate: Estimate) {
+        let link = ['/estDetail', estimate._id];
         this.router.navigate(link);
     }
 }

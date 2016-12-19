@@ -1,8 +1,17 @@
-<h3>Top Heroes</h3>
+<h3>Contacts</h3>
 <div class="row">
-    <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-md-3">
-        <div class="module hero">
-            <h4>{{hero.name}}</h4>
+    <div *ngFor="let contact of Contacts" (click)="gotoDetail(contact)" class="col-md-3">
+        <div class="module contact">
+            <h4>{{contact.name | uppercase }}</h4>
+        </div>
+    </div>
+</div>
+
+<h3>Estimates</h3>
+<div class="row">
+    <div *ngFor="let estimate of Estimates" (click)="gotoDetail(estimate)" class="col-md-3">
+        <div class="module estimate">
+            <h4>{{estimate.itemName | uppercase }}</h4>
         </div>
     </div>
 </div>
